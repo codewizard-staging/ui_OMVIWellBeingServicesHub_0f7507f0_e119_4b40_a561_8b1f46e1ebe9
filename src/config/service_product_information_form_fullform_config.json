@@ -1,0 +1,26 @@
+{
+
+"service": [
+    {
+        "key": "ServiceId",
+        "type": "keyid",
+        "UIComponentTitle": "Service"
+    }
+        ,{
+        "key": "Name",
+        "label": "Name",
+        "type": "text",
+        "editable": true,
+        "validators": [
+                    ]
+                            }
+    ,{
+        "key": "Description",
+        "label": "Description",
+        "type": "text",
+        "editable": true,
+        "validators": [
+                    ]
+                            }
+]
+}

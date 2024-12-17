@@ -1,0 +1,134 @@
+{
+        "practitioner": [
+                        {
+                            "key": "PractitionerId",
+                            "type": "keyid"
+                        },
+                        {
+                            "key": "Name",
+                            "label": "Name",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "Name is required"
+                            ]
+                        },
+                        {
+                            "key": "Qualification",
+                            "label": "Qualification",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "Qualification is required"
+                            ]
+                        },
+                    {
+                        "key": "Practitionerbooking",
+                        "type": "keyid"
+                    }  
+                        ]
+,        "appointment": [
+                        {
+                            "key": "AppointmentId",
+                            "type": "keyid"
+                        },
+                        {
+                            "key": "Date",
+                            "label": "Date",
+                            "type": "date",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "Date is required"
+                            ]
+                        },
+                        {
+                            "key": "Time",
+                            "label": "Time",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "Time is required"
+                            ]
+                        },
+                    {
+                        "key": "Appointmentservices",
+                        "type": "keyid"
+                    }  
+                        ]
+,        "user": [
+                        {
+                            "key": "UserId",
+                            "type": "keyid"
+                        },
+                        {
+                            "key": "Username",
+                            "label": "Username",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "Username is required"
+                            ]
+                        },
+                        {
+                            "key": "Email",
+                            "label": "Email",
+                            "type": "text",
+                                "editable": true,
+                                "validators": [
+                                    "required"
+                                ],
+                                "validationMessages": [
+                                    "Email is required"
+                                ]
+                            }
+        ]
+,        "service": [
+                        {
+                            "key": "ServiceId",
+                            "type": "keyid"
+                        },
+                        {
+                            "key": "Name",
+                            "label": "Name",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "Name is required"
+                            ]
+                        },
+                        {
+                            "key": "Description",
+                            "label": "Description",
+                            "type": "text",
+                            "editable": true,
+                            "validators": [
+                                "required"
+                            ],
+                            "validationMessages": [
+                                "Description is required"
+                            ]
+                        },
+                    {
+                        "key": "Serviceslots",
+                        "type": "keyid"
+                    }  
+                        ]
+}

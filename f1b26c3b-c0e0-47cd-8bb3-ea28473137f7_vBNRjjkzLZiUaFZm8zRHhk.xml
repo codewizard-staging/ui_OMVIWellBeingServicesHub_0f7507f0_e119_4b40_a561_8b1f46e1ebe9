@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+    <edmx:DataServices>
+        <Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="WellbeingServicesHubPortal">
+            <EntityType HasStream="false" Name="Service">
+                <Key>
+                    <PropertyRef Name="ServiceId"/>
+                </Key>
+                <Property Name="ServiceId" Type="Edm.String" isUnique="true"/>
+                <Property Name="Name" Type="Edm.String" isUnique="true"/>
+                <Property Name="Description" Type="Edm.String" isUnique="false"/>
+                <NavigationProperty Name="slots" Type="Collection(WellbeingServicesHubPortal.Practitioner)"/>
+            </EntityType>
+            <EntityType HasStream="false" Name="Practitioner">
+                <Key>
+                    <PropertyRef Name="PractitionerId"/>
+                </Key>
+                <Property Name="PractitionerId" Type="Edm.String" isUnique="true"/>
+                <Property Name="Name" Type="Edm.String" isUnique="false"/>
+                <Property Name="Qualification" Type="Edm.String" isUnique="false"/>
+                <NavigationProperty Name="booking" Type="Collection(WellbeingServicesHubPortal.Appointment)"/>
+            </EntityType>
+            <EntityType HasStream="false" Name="Appointment">
+                <Key>
+                    <PropertyRef Name="AppointmentId"/>
+                </Key>
+                <Property Name="AppointmentId" Type="Edm.String" isUnique="true"/>
+                <Property Name="Date" Type="Edm.Date" isUnique="false"/>
+                <Property Name="Time" Type="Edm.String" isUnique="false"/>
+                <NavigationProperty Name="services" Type="WellbeingServicesHubPortal.User"/>
+            </EntityType>
+            <EntityType HasStream="false" Name="User">
+                <Key>
+                    <PropertyRef Name="UserId"/>
+                </Key>
+                <Property Name="UserId" Type="Edm.String" isUnique="true"/>
+                <Property Name="Username" Type="Edm.String" isUnique="true"/>
+                <Property Name="Email" Type="Edm.String" isUnique="true"/>
+            </EntityType>
+            <EntityContainer Name="Container">
+                <EntitySet Name="Services" EntityType="WellbeingServicesHubPortal.Service">
+                    <NavigationPropertyBinding Path="slots" Target="Practitioners"/>
+                </EntitySet>
+                <EntitySet Name="Practitioners" EntityType="WellbeingServicesHubPortal.Practitioner">
+                    <NavigationPropertyBinding Path="booking" Target="Appointments"/>
+                </EntitySet>
+                <EntitySet Name="Appointments" EntityType="WellbeingServicesHubPortal.Appointment">
+                    <NavigationPropertyBinding Path="services" Target="Users"/>
+                </EntitySet>
+                <EntitySet Name="Users" EntityType="WellbeingServicesHubPortal.User"/>
+            </EntityContainer>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
